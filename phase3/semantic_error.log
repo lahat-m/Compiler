@@ -1,0 +1,100 @@
+SEMANTIC ANALYSIS
+Using input file: ../phase2/ast.txt
+
+INPUT FILE: ../phase2/ast.txt
+ AST Preview:
+ ────────────────
+ PROGRAM (line 1) - 1 statements
+   Statement 1:
+     PROGRAM (line 1) - 3 statements
+       Statement 1:
+         ASSIGNMENT (line 1)
+           Variable: B
+           Value:
+             BOOLEAN: TRUE (line 1)
+       Statement 2:
+         ASSIGNMENT (line 1)
+           Variable: C
+           Value:
+ ... (truncated)
+
+ Total lines: 19
+ AST nodes detected: 3
+
+
+LOADING AST FROM: ../phase2/ast.txt
+
+AST loaded successfully
+Nodes processed: 10
+
+
+SEMANTIC ANALYSIS
+Phase 1: Building symbol table...
+   Analyzing program with 3 statements
+   --- Statement 1 ---
+Analyzing assignment at line 1
+Assignment validated - boolean type inferred
+   --- Statement 2 ---
+Analyzing assignment at line 1
+Assignment validated - boolean type inferred
+   --- Statement 3 ---
+   Analyzing expression statement at line 1
+Phase 2: Processing known symbols...
+Symbol 'B': BOOLEAN, defined=TRUE, used in expression
+Symbol 'C': BOOLEAN, defined=FALSE, used in expression
+Phase 3: Semantic validation...
+No undefined variables found
+All defined variables are used
+Type consistency verified
+Expression 'B OR C' is well-formed
+Phase 4: Final validation...
+Symbol table constructed with 2 symbols
+Type checking completed
+Semantic validation finished
+Results:
+Errors found: 0
+Warnings: 0
+Symbols analyzed: 2
+
+
+SYMBOL TABLE
+Name         Type       Defined  Used     Decl   Use    Value
+────────────────────────────────────────────────────────────────
+B            BOOLEAN    Yes      Yes      1      3      TRUE
+C            BOOLEAN    Yes      Yes      2      3      FALSE
+Total symbols: 2
+
+
+SEMANTIC ERRORS
+No semantic errors found
+
+
+ANALYSIS RESULTS
+
+Symbol Table:
+Total symbols: 2
+Defined symbols: 2
+Used symbols: 2
+
+Semantic Validation:
+No errors found
+  No warnings
+
+
+ GENERATING OUTPUT FILES
+ Creating annotated_ast.txt...
+ Annotated AST generated
+
+ Creating symbol_table.txt...
+ Symbol table exported
+
+ Creating semantic_errors.txt...
+ Semantic errors logged
+
+
+ OUTPUT FILES GENERATED
+annotated_ast.txt (70 lines)
+ symbol_table.txt (10 lines)
+semantic_errors.txt
+
+
