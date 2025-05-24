@@ -378,12 +378,7 @@ ld test.o -o test
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 ## Author
-
-**Compiler Project**
-- Built as a comprehensive compiler construction demonstration
-- Implements classical compiler theory with modern engineering practices
-- Designed for educational and practical use
-
+## Lahat Mariel
 ## Acknowledgments
 
 - **Compiler Construction Principles**: Based on classical compiler theory
