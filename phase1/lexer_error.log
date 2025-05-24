@@ -1,0 +1,34 @@
+ROADMAP COMPILER - PHASE 1
+ LEXICAL ANALYZER
+ Input:  test.txt (source code)
+ Output: tokens.txt (token stream for Phase 2)
+INPUT FILE: test.txt
+
+  1: B = TRUE
+  2: C = FALSE
+  3: B OR C
+
+
+
+TOKENIZATION PROCESS
+
+ Line Token Type   Lexeme          Value  Description
+ ────────────────────────────────────────────────────────────────────
+ 1    IDENTIFIER   B               B      Variable/Symbol
+ 1    ASSIGN       =               ─    Assignment operator
+ 1    T_TRUE       TRUE            true   Boolean literal (true)
+ 2    IDENTIFIER   C               C      Variable/Symbol
+ 2    ASSIGN       =               ─    Assignment operator
+ 2    T_FALSE      FALSE           false  Boolean literal (false)
+ 3    IDENTIFIER   B               B      Variable/Symbol
+ 3    OR           OR              ─    Logical OR
+ 3    IDENTIFIER   C               C      Variable/Symbol
+
+ Total tokens generated: 9
+
+
+OUTPUT FILE: tokens.txt
+
+Tokens: 9
+
+
