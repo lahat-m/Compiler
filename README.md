@@ -1,4 +1,4 @@
-# Roadmap Compiler
+# Compiler
 
 A complete 4-phase compiler for logical expressions, built from scratch with comprehensive testing suite. Transforms high-level logical expressions into executable x86_64 assembly code.
 
@@ -7,11 +7,11 @@ A complete 4-phase compiler for logical expressions, built from scratch with com
 ![Architecture](https://img.shields.io/badge/Target-x86__64%20Assembly-orange)
 ![Maturity](https://img.shields.io/badge/Maturity-Expert%20Level-gold)
 
-## 🎯 Overview
+##  Overview
 
-The Roadmap Compiler is a full-featured compiler that processes logical expressions through four distinct phases, demonstrating classical compiler construction principles. It handles complex boolean logic, operator precedence, and generates optimized assembly code.
+The Compiler is a full-featured compiler that processes logical expressions through four distinct phases. It handles complex boolean logic, operator precedence, and generates optimized assembly code.
 
-### ✨ Key Features
+### Key Features
 
 - **Complete 4-Phase Architecture**: Lexical → Syntax → Semantic → Code Generation
 - **Advanced Logical Operators**: AND, OR, NOT, XOR, XNOR, IMPLIES, EQUIV
@@ -22,7 +22,7 @@ The Roadmap Compiler is a full-featured compiler that processes logical expressi
 - **Error Handling**: Detailed error reporting at each phase
 - **Professional Output**: Clean, formatted results with statistics
 
-## 🏗️ Architecture
+## Architecture
 
 ```
 ┌─────────────────┐    ┌─────────────────┐    ┌─────────────────┐    ┌─────────────────┐
@@ -37,7 +37,7 @@ The Roadmap Compiler is a full-featured compiler that processes logical expressi
 ## 📁 Project Structure
 
 ```
-roadmap-compiler/
+compiler/
 ├── phase1/                 # Lexical Analysis
 │   ├── lexer.l            # Flex lexer specification
 │   ├── tokens.h           # Token definitions
@@ -70,7 +70,7 @@ roadmap-compiler/
 └── README.md              # This documentation
 ```
 
-## 🚀 Quick Start
+## Quick Start
 
 ### Prerequisites
 
@@ -86,7 +86,7 @@ roadmap-compiler/
 ```bash
 # Clone and enter project directory
 git clone <repository-url>
-cd roadmap-compiler
+cd compiler
 
 # Build all phases
 cd phase1 && make && cd ..
@@ -115,7 +115,7 @@ ld program.o -o program
 echo "Exit code: $?"
 ```
 
-## 🧪 Testing Suite
+## Testing Suite
 
 ### Run Simple Tests (8 test cases)
 ```bash
@@ -147,12 +147,8 @@ echo "Exit code: $?"
 
 **Expected Result:** 10-12/12 PASS ✅
 
-### Maturity Levels
-- **🏆 EXPERT (12/12)**: Production-ready for complex logical systems
-- **⭐ ADVANCED (8-11/12)**: Strong foundation with minor refinements needed
-- **✨ INTERMEDIATE (4-7/12)**: Basic functionality solid, advanced features in development
 
-## 📖 Usage Examples
+## Usage Examples
 
 ### Basic Boolean Logic
 ```
@@ -198,7 +194,7 @@ Features Demonstrated:
 - Complex evaluation
 ```
 
-## 🔧 Technical Details
+## Technical Details
 
 ### Phase 1: Lexical Analysis
 - **Technology**: Flex lexical analyzer generator
@@ -240,7 +236,7 @@ Features Demonstrated:
   - Stack frame management
   - System call integration (exit handling)
 
-## 📊 Performance Metrics
+## Performance Metrics
 
 ### Compilation Statistics (Typical)
 - **Lexical Analysis**: 50-200 tokens/second
@@ -255,17 +251,17 @@ Features Demonstrated:
 - **Code Size**: Compact assembly output
 - **Execution Speed**: Native x86_64 performance
 
-## 🎓 Educational Value
+## Academic Project
 
 This project demonstrates:
 
-### Compiler Theory Concepts
+### Compiler Concepts
 - **Lexical Analysis**: Regular expressions, finite automata
 - **Syntax Analysis**: Context-free grammars, LALR parsing
 - **Semantic Analysis**: Symbol tables, type systems
 - **Code Generation**: Instruction selection, register allocation
 
-### Software Engineering Practices
+### Practices
 - **Modular Design**: Clear phase separation
 - **Error Handling**: Comprehensive error reporting
 - **Testing**: Automated test suites with coverage analysis
@@ -278,12 +274,12 @@ This project demonstrates:
 - **x86_64 Assembly**: Native code generation
 - **GNU Toolchain**: Professional development environment
 
-## 📈 Test Results
+## Test Results
 
 ### Simple Test Suite Results
 ```
 ╔═══════════════════════════════════════════════════════════════╗
-║                ROADMAP COMPILER - SIMPLE TESTS               ║
+║                COMPILER - SIMPLE TESTS               ║
 ║              Testing Basic Functionality Only                ║
 ╚═══════════════════════════════════════════════════════════════╝
 
@@ -300,13 +296,13 @@ Total tests: 8
 Passed: 8 ✅
 Failed: 0
 
-🎉 ALL SIMPLE TESTS PASSED! 🎉
+ALL SIMPLE TESTS PASSED!
 ```
 
 ### Complex Test Suite Results
 ```
 ╔══════════════════════════════════════════════════════════════════╗
-║                ROADMAP COMPILER - COMPLEX TESTS                 ║
+║                COMPILER - COMPLEX TESTS                 ║
 ║              Testing Advanced Functionality                     ║
 ╚══════════════════════════════════════════════════════════════════╝
 
@@ -323,11 +319,11 @@ Failed: 0
 ✅ Multiple Complex Assignments       [ADVANCED]     [PASSED]
 ✅ Deeply Nested Parentheses          [EXPERT]       [PASSED]
 
-🚀 COMPILER MATURITY LEVEL: EXPERT 🚀
+COMPILER MATURITY LEVEL: EXPERT
 Ready for production use with complex logical systems!
 ```
 
-## 🤝 Contributing
+## Contributing
 
 ### Development Setup
 1. Fork the repository
@@ -344,25 +340,6 @@ Ready for production use with complex logical systems!
 - Complex test pass rate should remain >90%
 - Add performance benchmarks for significant changes
 
-## 📋 TODO / Future Enhancements
-
-### Short Term
-- [ ] Add support for ARM64 assembly generation
-- [ ] Implement optimization passes (constant folding, dead code elimination)
-- [ ] Add floating-point literal support
-- [ ] Enhanced error messages with suggestions
-
-### Medium Term  
-- [ ] Function definitions and calls
-- [ ] Arrays and indexing operations
-- [ ] Control flow statements (if/while/for)
-- [ ] Module system and imports
-
-### Long Term
-- [ ] LLVM IR backend integration
-- [ ] JIT compilation support
-- [ ] IDE integration (Language Server Protocol)
-- [ ] Web-based compiler playground
 
 ## 🔍 Troubleshooting
 
@@ -396,32 +373,21 @@ as -64 phase4/program.s -o test.o
 ld test.o -o test
 ```
 
-## 📜 License
+## License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-## 👨‍💻 Author
+## Author
 
-**Roadmap Compiler Project**
+**Compiler Project**
 - Built as a comprehensive compiler construction demonstration
 - Implements classical compiler theory with modern engineering practices
 - Designed for educational and practical use
 
-## 🙏 Acknowledgments
+## Acknowledgments
 
 - **Compiler Construction Principles**: Based on classical compiler theory
 - **GNU Toolchain**: Flex, Bison, GCC for professional development
 - **x86_64 Architecture**: Intel/AMD processor instruction set
 - **Open Source Community**: Tools and libraries that made this possible
 
----
-
-## 📊 Project Statistics
-
-- **Lines of Code**: ~3,000+ (C, Flex, Bison)
-- **Test Cases**: 20 comprehensive tests
-- **Success Rate**: 100% (Simple), 95%+ (Complex)
-- **Supported Operators**: 12 logical operators
-- **Target Architecture**: x86_64 Linux
-- **Development Time**: Comprehensive implementation
-- **Maturity Level**: Expert/Production Ready
