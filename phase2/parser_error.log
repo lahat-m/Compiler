@@ -1,0 +1,66 @@
+ROADMAP COMPILER - PHASE 2
+SYNTAX ANALYSIS
+ Input:  tokens.txt (from Phase 1)
+ Output: ast.txt (Abstract Syntax Tree)
+
+
+Using input file: ../phase1/tokens.txt
+
+ INPUT FILE: ../phase1/tokens.txt
+
+ Tokens Preview:
+ ────────────────────────────────────────
+  1: IDENTIFIER B
+  2: ASSIGN =
+  3: T_TRUE TRUE 1
+  4: IDENTIFIER C
+  5: ASSIGN =
+  6: T_FALSE FALSE 0
+  7: IDENTIFIER B
+ Total tokens: 8
+
+
+PARSING TOKENS FROM: ../phase1/tokens.txt
+ Parsing completed successfully
+ AST generated
+
+
+ AST STRUCTURE OVERVIEW
+
+Root: PROGRAM node
+Statements: 1
+Assignments: 0
+Expressions: 0
+AST successfully constructed
+
+
+ GENERATING AST
+ Writing AST to ast.txt...
+ast.txt created successfully
+
+
+
+OUTPUT FILE: ast.txt
+Format: Hierarchical tree structure
+Lines: 27
+
+
+ AST SAMPLE
+ PROGRAM (line 1) - 1 statements
+   Statement 1:
+     PROGRAM (line 1) - 3 statements
+       Statement 1:
+         ASSIGNMENT (line 1)
+           Variable: B
+           Value:
+             BOOLEAN: TRUE (line 1)
+       Statement 2:
+         ASSIGNMENT (line 1)
+           Variable: C
+           Value:
+             BOOLEAN: FALSE (line 1)
+       Statement 3:
+         EXPRESSION_STMT (line 1)
+ ... (truncated, see ast.txt for complete tree)
+
+
