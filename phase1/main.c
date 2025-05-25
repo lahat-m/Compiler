@@ -14,10 +14,9 @@ void yyerror(const char* msg) {
 }
 
 void print_header() {
-    printf("ROADMAP COMPILER - PHASE 1\n");
-    printf(" LEXICAL ANALYZER\n");
-    printf(" Input:  test.txt (source code)\n");
-    printf(" Output: tokens.txt (token stream for Phase 2)\n");
+    printf("LEXICAL ANALYZER\n");
+    printf("Input:  test.txt\n");
+    printf("Output: tokens.txt - token streams\n");
 }
 
 void print_input_content(const char* filename) {

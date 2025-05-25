@@ -162,7 +162,6 @@ int parse_tokens_from_file(const char* filename) {
     }
     
     // Call bison parser
-    extern ASTNode* ast_root;
     extern int yyparse(void);
     
     printf("PARSING TOKENS FROM: %s\n", filename);

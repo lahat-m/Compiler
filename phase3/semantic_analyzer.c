@@ -81,7 +81,7 @@ void analyze_identifier(SemanticContext* ctx, ASTNode* node) {
 }
 
 // Analyze assignment node
-void analyze_assignment(SemanticContext* ctx, ASTNode* node) {
+void analyze_assignment(SemanticContext* ctx __attribute__((unused)), ASTNode* node) {
     if (!node) return;
     
     printf("Analyzing assignment at line %d\n", node->line_number);
@@ -98,7 +98,7 @@ void analyze_assignment(SemanticContext* ctx, ASTNode* node) {
 }
 
 // Analyze binary operation
-void analyze_binary_operation(SemanticContext* ctx, ASTNode* node) {
+void analyze_binary_operation(SemanticContext* ctx __attribute__((unused)), ASTNode* node) {
     if (!node) return;
     
     printf("Analyzing binary operation (%s) at line %d\n", 
@@ -116,7 +116,7 @@ void analyze_binary_operation(SemanticContext* ctx, ASTNode* node) {
 }
 
 // Analyze unary operation
-void analyze_unary_operation(SemanticContext* ctx, ASTNode* node) {
+void analyze_unary_operation(SemanticContext* ctx __attribute__((unused)), ASTNode* node) {
     if (!node) return;
     
     printf("Analyzing unary operation (%s) at line %d\n", 
@@ -200,13 +200,13 @@ int perform_semantic_analysis(SemanticContext* ctx, ASTNode* ast) {
     printf("Phase 2: Processing known symbols...\n");
     
     // Add symbol B (assigned TRUE)
-    SymbolEntry* symbol_b = insert_symbol(ctx->symbol_table, "B", SYM_BOOLEAN, 1);
+    insert_symbol(ctx->symbol_table, "B", SYM_BOOLEAN, 1);
     set_symbol_value(ctx->symbol_table, "B", 1, 1);  // B = TRUE
     mark_symbol_used(ctx->symbol_table, "B", 3);     // Used in B OR C
     printf("Symbol 'B': BOOLEAN, defined=TRUE, used in expression\n");
     
     // Add symbol C (assigned FALSE)  
-    SymbolEntry* symbol_c = insert_symbol(ctx->symbol_table, "C", SYM_BOOLEAN, 2);
+    insert_symbol(ctx->symbol_table, "C", SYM_BOOLEAN, 2);
     set_symbol_value(ctx->symbol_table, "C", 0, 2);  // C = FALSE
     mark_symbol_used(ctx->symbol_table, "C", 3);     // Used in B OR C
     printf("Symbol 'C': BOOLEAN, defined=FALSE, used in expression\n");

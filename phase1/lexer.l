@@ -1,4 +1,14 @@
+/*
+ * Lexer for a logical expression parser.
+ * This lexer recognizes various logical operators, quantifiers, and identifiers.
+ * It uses Flex for tokenization and outputs tokens for further processing.
+ * 
+ * flex lexer.l
+ * gcc -Wall -Wextra -std=c99 -D_POSIX_C_SOURCE=200809L -o lexer lex.yy.c main.c
+ */
+
 %{
+#define _POSIX_C_SOURCE 200809L
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>

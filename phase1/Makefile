@@ -1,6 +1,6 @@
 # Makefile for Phase 1 Lexical Analyzer
 CC = gcc
-CFLAGS = -Wall -Wextra -std=c99
+CFLAGS = -Wall -Wextra -std=c99 -D_POSIX_C_SOURCE=200809L
 FLEX = flex
 
 # Targets

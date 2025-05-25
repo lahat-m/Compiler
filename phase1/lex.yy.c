@@ -559,7 +559,16 @@ int yy_flex_debug = 0;
 #define YY_RESTORE_YY_MORE_OFFSET
 char *yytext;
 #line 1 "lexer.l"
-#line 2 "lexer.l"
+/*
+ * Lexer for a logical expression parser.
+ * This lexer recognizes various logical operators, quantifiers, and identifiers.
+ * It uses Flex for tokenization and outputs tokens for further processing.
+ * 
+ * flex lexer.l
+ * gcc -Wall -Wextra -std=c99 -D_POSIX_C_SOURCE=200809L -o lexer lex.yy.c main.c
+ */
+#line 11 "lexer.l"
+#define _POSIX_C_SOURCE 200809L
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
@@ -593,9 +602,9 @@ const char* token_type_to_string(TokenType type) {
         default: return "UNKNOWN";
     }
 }
-#line 597 "lex.yy.c"
+#line 606 "lex.yy.c"
 #define YY_NO_INPUT 1
-#line 599 "lex.yy.c"
+#line 608 "lex.yy.c"
 
 #define INITIAL 0
 
@@ -810,10 +819,10 @@ YY_DECL
 		}
 
 	{
-#line 41 "lexer.l"
+#line 51 "lexer.l"
 
 
-#line 817 "lex.yy.c"
+#line 826 "lex.yy.c"
 
 	while ( /*CONSTCOND*/1 )		/* loops until end-of-file is reached */
 		{
@@ -882,82 +891,82 @@ do_action:	/* This label is used only to access EOF actions. */
 
 case 1:
 YY_RULE_SETUP
-#line 43 "lexer.l"
+#line 53 "lexer.l"
 { return AND; }
 	YY_BREAK
 case 2:
 YY_RULE_SETUP
-#line 44 "lexer.l"
+#line 54 "lexer.l"
 { return OR; }
 	YY_BREAK
 case 3:
 YY_RULE_SETUP
-#line 45 "lexer.l"
+#line 55 "lexer.l"
 { return NOT; }
 	YY_BREAK
 case 4:
 YY_RULE_SETUP
-#line 46 "lexer.l"
+#line 56 "lexer.l"
 { return XOR; }
 	YY_BREAK
 case 5:
 YY_RULE_SETUP
-#line 47 "lexer.l"
+#line 57 "lexer.l"
 { return XNOR; }
 	YY_BREAK
 case 6:
 YY_RULE_SETUP
-#line 49 "lexer.l"
+#line 59 "lexer.l"
 { return IMPLIES; }
 	YY_BREAK
 case 7:
 YY_RULE_SETUP
-#line 50 "lexer.l"
+#line 60 "lexer.l"
 { return IFF; }
 	YY_BREAK
 case 8:
 YY_RULE_SETUP
-#line 52 "lexer.l"
+#line 62 "lexer.l"
 { return ASSIGN; }
 	YY_BREAK
 case 9:
 YY_RULE_SETUP
-#line 53 "lexer.l"
+#line 63 "lexer.l"
 { return EQUIV; }
 	YY_BREAK
 case 10:
 YY_RULE_SETUP
-#line 55 "lexer.l"
+#line 65 "lexer.l"
 { return EXISTS; }
 	YY_BREAK
 case 11:
 YY_RULE_SETUP
-#line 56 "lexer.l"
+#line 66 "lexer.l"
 { return FORALL; }
 	YY_BREAK
 case 12:
 YY_RULE_SETUP
-#line 58 "lexer.l"
+#line 68 "lexer.l"
 { return IF; }
 	YY_BREAK
 case 13:
 YY_RULE_SETUP
-#line 59 "lexer.l"
+#line 69 "lexer.l"
 { return IFF_KEYWORD; }
 	YY_BREAK
 case 14:
 YY_RULE_SETUP
-#line 61 "lexer.l"
+#line 71 "lexer.l"
 { return LPAREN; }
 	YY_BREAK
 case 15:
 YY_RULE_SETUP
-#line 62 "lexer.l"
+#line 72 "lexer.l"
 { return RPAREN; }
 	YY_BREAK
 case 16:
 YY_RULE_SETUP
-#line 64 "lexer.l"
+#line 74 "lexer.l"
 { 
     yylval.bool_val = 1; 
     return T_TRUE; 
@@ -965,7 +974,7 @@ YY_RULE_SETUP
 	YY_BREAK
 case 17:
 YY_RULE_SETUP
-#line 68 "lexer.l"
+#line 78 "lexer.l"
 { 
     yylval.bool_val = 0; 
     return T_FALSE; 
@@ -973,7 +982,7 @@ YY_RULE_SETUP
 	YY_BREAK
 case 18:
 YY_RULE_SETUP
-#line 73 "lexer.l"
+#line 83 "lexer.l"
 { 
     yylval.str = yytext; 
     return IDENTIFIER; 
@@ -982,12 +991,12 @@ YY_RULE_SETUP
 case 19:
 /* rule 19 can match eol */
 YY_RULE_SETUP
-#line 78 "lexer.l"
+#line 88 "lexer.l"
 ;
 	YY_BREAK
 case 20:
 YY_RULE_SETUP
-#line 80 "lexer.l"
+#line 90 "lexer.l"
 {
     fprintf(stderr, "Lexer error: Unrecognized character '%s' at line %d\n", yytext, yylineno);
     return INVALID_TOKEN;
@@ -995,10 +1004,10 @@ YY_RULE_SETUP
 	YY_BREAK
 case 21:
 YY_RULE_SETUP
-#line 85 "lexer.l"
+#line 95 "lexer.l"
 ECHO;
 	YY_BREAK
-#line 1002 "lex.yy.c"
+#line 1011 "lex.yy.c"
 case YY_STATE_EOF(INITIAL):
 	yyterminate();
 
@@ -1974,5 +1983,5 @@ void yyfree (void * ptr )
 
 #define YYTABLES_NAME "yytables"
 
-#line 85 "lexer.l"
+#line 95 "lexer.l"
 

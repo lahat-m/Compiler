@@ -1,0 +1,5 @@
+P = TRUE
+Q = FALSE
+R = TRUE
+S = FALSE
+result = (P AND Q) OR (R XOR S) AND NOT (P IMPLIES Q)

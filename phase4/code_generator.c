@@ -218,7 +218,7 @@ void generate_identifier(CodeGenContext* ctx, const char* name, Register result_
 }
 
 // Generate code for binary operation
-void generate_binary_op(CodeGenContext* ctx, ASTNode* node, Register result_reg) {
+void generate_binary_op(CodeGenContext* ctx, ASTNode* node, Register result_reg __attribute__((unused))) {
     printf("│     Generating binary operation: %s\n", node->node_type_str);
     
     Register left_reg = REG_RAX;   // Use RAX for left operand
